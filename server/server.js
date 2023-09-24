@@ -11,7 +11,7 @@ app.use(express.json());
 app.use("/customer", customerRoute);
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/client/pages/home.html")
+  res.sendFile('client/pages/home.html', {root: __dirname })
 });
 
 app.listen(3000, () => {
