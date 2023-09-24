@@ -15,6 +15,7 @@ customerRoutes.get("/", (req, res) => {
 customerRoutes.post("/", (req, res) => {
   const newCustomer = req.body;
   customers.push(newCustomer);
+  console.log("customer added")
 
   res.status(201).json(newCustomer);
 });
