@@ -17,12 +17,8 @@ app.get("/", (req, res) => {
   res.sendFile(filePath);
 });
 
-app.use('/client/styles', express.static(path.join(__dirname, 'client/styles'), {
-  setHeaders: (res, filePath) => {
-    const contentType = mime.getType(filePath);
-    res.setHeader('Content-Type', contentType);
-  },
-}));
+app.use(express.static('client', { 'extensions': ['html', 'htm', 'css', 'js'] }));
+
 
 app.listen(3000, () => {
   console.log("Server open on port 3000");
