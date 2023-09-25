@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.use("/customer", customerRoute);
 
-app.use('/img', express.static(path.join(__dirname, '../client/img')));
+app.use(express.static(path.join(__dirname, 'client')));
 
 app.get("/styles/global.css", (req, res) => {
   const filePath = path.join(__dirname, '../client/styles/global.css'); // Juster stien til CSS-filen
