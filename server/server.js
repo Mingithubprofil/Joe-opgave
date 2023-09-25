@@ -7,10 +7,10 @@ const app = express();
 
 const customerRoute = require("./routes/customer");
 
+app.use(express.static(path.join(__dirname, 'client')));
+
 app.use(cors());
 app.use(express.json());
-
-app.use(express.static(path.join(__dirname, 'client')));
 
 app.use("/customer", customerRoute);
 
