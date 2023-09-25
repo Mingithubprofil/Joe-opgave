@@ -12,9 +12,11 @@ app.use(express.json());
 
 app.use("/customer", customerRoute);
 
-app.get('/styles/global.css', (req, res) => {
-  res.setHeader('Content-Type', 'text/css');
-  res.sendFile(__dirname + '/client/styles/global.css');
+app.get("/styles/global.css", (req, res) => {
+  const filePath = path.join(__dirname, '../client/styles/global.css'); // Juster stien til CSS-filen
+  const contentType = 'text/css'; // CSS-filens MIME-type
+  res.setHeader('Content-Type', contentType);
+  res.sendFile(filePath);
 });
 
 app.get("/", (req, res) => {
