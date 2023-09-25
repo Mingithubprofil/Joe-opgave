@@ -12,6 +12,8 @@ app.use(express.json());
 
 app.use("/customer", customerRoute);
 
+app.use('/img', express.static(path.join(__dirname, '../client/img')));
+
 app.get("/styles/global.css", (req, res) => {
   const filePath = path.join(__dirname, '../client/styles/global.css'); // Juster stien til CSS-filen
   const contentType = 'text/css'; // CSS-filens MIME-type
