@@ -41,12 +41,6 @@ app.get('/pages/login.html', (req, res) => {
 }); 
 
 
-
-
-
-app.use(express.static(path.join(__dirname, 'client')));
-
-
 app.listen(3000, () => {
   console.log("Server open on port 3000");
 });
