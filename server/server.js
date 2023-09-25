@@ -26,6 +26,19 @@ app.get("/", (req, res) => {
   res.sendFile(filePath);
 });
 
+// Rute til home.html
+app.get('/pages/home.html', (req, res) => {
+  const filePath = path.join(__dirname, '../client/pages/home.html');
+  res.sendFile(filePath);
+});
+
+// Rute til login.html
+app.get('/pages/login.html', (req, res) => {
+  const filePath = path.join(__dirname, '../client/pages/login.html');
+  res.sendFile(filePath);
+});
+
+
 
 
 
