@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   res.sendFile(filePath);
 });
 
-app.use(express.static('client', { 'extensions': ['html', 'htm', 'css', 'js'] }));
+app.use(express.static(path.join(__dirname, 'client')));
 
 
 app.listen(3000, () => {
